@@ -1,4 +1,5 @@
 import os
+import re
 # hugging face镜像设置，如果国内环境无法使用启用该设置
 # os.environ['HF_ENDPOINT'] = 'https://hf-mirror.com'
 from dotenv import load_dotenv
@@ -101,6 +102,28 @@ def format_cache_hit_rate(response):
     return f"{hit_tokens / prompt_tokens:.2%} ({hit_tokens}/{prompt_tokens})"
 
 
+def get_prompt_token_count(response):
+    response_metadata = getattr(response, "response_metadata", {}) or {}
+    usage_metadata = getattr(response, "usage_metadata", {}) or {}
+    token_usage = response_metadata.get("token_usage", {}) or {}
+
+    prompt_tokens = token_usage.get("prompt_tokens") or usage_metadata.get("input_tokens")
+
+    if prompt_tokens is None:
+        return "N/A"
+
+    return prompt_tokens
+
+
+def build_chunk_preview(text, max_chars=180):
+    normalized_text = re.sub(r"\s+", " ", text).strip()
+
+    if len(normalized_text) <= max_chars:
+        return normalized_text
+
+    return normalized_text[:max_chars] + "..."
+
+
 def run_splitter_test(chunk_size, chunk_overlap):
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=chunk_size,
@@ -118,7 +141,13 @@ def run_splitter_test(chunk_size, chunk_overlap):
     return {
         "chunk_size": chunk_size,
         "chunk_overlap": chunk_overlap,
+        "num_chunks": len(chunks),
         "cache_hit_rate": format_cache_hit_rate(response),
+        "prompt_token_count": get_prompt_token_count(response),
+        "retrieved_chunk_previews": [
+            f"[{index}] len={len(doc.page_content)} | {build_chunk_preview(doc.page_content)}"
+            for index, doc in enumerate(retrieved_docs, start=1)
+        ],
         "answer_only": response.content,
     }
 
@@ -137,6 +166,11 @@ for index, config in enumerate(splitter_test_configs, start=1):
         "分块参数使用: "
         f"chunk_size={result['chunk_size']}, chunk_overlap={result['chunk_overlap']}"
     )
+    print(f"总分块数: {result['num_chunks']}")
     print(f"缓存命中率: {result['cache_hit_rate']}")
+    print(f"Prompt token count: {result['prompt_token_count']}")
+    print("Top-5 检索块预览:")
+    for preview in result["retrieved_chunk_previews"]:
+        print(preview)
     print("回答")
     print(result["answer_only"])
