@@ -1,0 +1,365 @@
+{
+  "run_at": "2026-05-21T10:36:40",
+  "interpreter": "/Users/jianghong/anaconda3/envs/all-in-rag/bin/python",
+  "doc_path": "/Users/jianghong/Desktop/Summer-SupplyChainData/all-in-rag/data/C2/md/rag-summary-notebook.md",
+  "source_length": 15121,
+  "qa_source": "heuristic",
+  "qa_count": 5,
+  "default_configs": {
+    "CharacterTextSplitter": {
+      "chunk_size": 400,
+      "chunk_overlap": 100
+    },
+    "RecursiveCharacterTextSplitter": {
+      "chunk_size": 400,
+      "chunk_overlap": 100
+    },
+    "SemanticChunker": {
+      "model_name": "BAAI/bge-small-zh-v1.5",
+      "device": "cpu",
+      "normalize_embeddings": true,
+      "breakpoint_threshold_type": "gradient",
+      "breakpoint_threshold_amount": null
+    },
+    "Semantic + Recursive": {
+      "model_name": "BAAI/bge-small-zh-v1.5",
+      "device": "cpu",
+      "normalize_embeddings": true,
+      "breakpoint_threshold_type": "gradient",
+      "breakpoint_threshold_amount": null,
+      "max_semantic_chunk_size": 1000,
+      "recursive_chunk_size": 400,
+      "recursive_chunk_overlap": 100
+    },
+    "MarkdownHeaderTextSplitter": {
+      "strip_headers": false
+    },
+    "MarkdownHeader + Recursive": {
+      "strip_headers": false,
+      "chunk_size": 400,
+      "chunk_overlap": 100
+    },
+    "Parent-Child Chunking": {
+      "parent_chunk_size": 1200,
+      "parent_chunk_overlap": 300,
+      "child_chunk_size": 400,
+      "child_chunk_overlap": 100
+    }
+  },
+  "qa_examples": [
+    {
+      "question": "请检索与“RAG Summary Notebook”相关的内容。",
+      "expected_keywords": [
+        "RAG Summary Notebook"
+      ],
+      "expected_phrases": [
+        "RAG Summary Notebook"
+      ]
+    },
+    {
+      "question": "请检索与“1. 什么是 RAG”相关的内容。",
+      "expected_keywords": [
+        "1. 什么是 RAG"
+      ],
+      "expected_phrases": [
+        "1. 什么是 RAG"
+      ]
+    },
+    {
+      "question": "请检索与“2. 端到端工作流”相关的内容。",
+      "expected_keywords": [
+        "2. 端到端工作流"
+      ],
+      "expected_phrases": [
+        "2. 端到端工作流"
+      ]
+    },
+    {
+      "question": "请检索与“2.1 高层流程”相关的内容。",
+      "expected_keywords": [
+        "2.1 高层流程"
+      ],
+      "expected_phrases": [
+        "2.1 高层流程"
+      ]
+    },
+    {
+      "question": "请检索与“2.2 核心逻辑”相关的内容。",
+      "expected_keywords": [
+        "2.2 核心逻辑"
+      ],
+      "expected_phrases": [
+        "2.2 核心逻辑"
+      ]
+    }
+  ],
+  "metrics": {
+    "CharacterTextSplitter": {
+      "status": "成功",
+      "chunk_count": 48,
+      "avg_length": 318.7083333333333,
+      "median_length": 283.5,
+      "min_length": 3,
+      "max_length": 1056,
+      "total_chars": 15298,
+      "coverage_ratio": 1.0117055750281065,
+      "length_variance": 32507.62326388889,
+      "length_std": 180.29870566337655,
+      "length_variance_score": 0.6386850453535079,
+      "header_preservation_score": 0.8615506329113924,
+      "avg_pairwise_overlap": 0.664187063916103,
+      "retrieval_score": 0.8,
+      "retrieval_hit_rate": 0.8,
+      "retrieval_mrr": 0.8
+    },
+    "RecursiveCharacterTextSplitter": {
+      "status": "成功",
+      "chunk_count": 57,
+      "avg_length": 275.36842105263156,
+      "median_length": 284,
+      "min_length": 3,
+      "max_length": 395,
+      "total_chars": 15696,
+      "coverage_ratio": 1.0380265855432842,
+      "length_variance": 8325.636195752539,
+      "length_std": 91.24492421911773,
+      "length_variance_score": 0.7511140131806082,
+      "header_preservation_score": 0.7563977066144595,
+      "avg_pairwise_overlap": 0.7121864856498106,
+      "retrieval_score": 0.8,
+      "retrieval_hit_rate": 0.8,
+      "retrieval_mrr": 0.8
+    },
+    "SemanticChunker": {
+      "status": "成功",
+      "chunk_count": 2,
+      "avg_length": 7560,
+      "median_length": 7560.0,
+      "min_length": 1314,
+      "max_length": 13806,
+      "total_chars": 15120,
+      "coverage_ratio": 0.9999338668077508,
+      "length_variance": 39012516,
+      "length_std": 6246.0,
+      "length_variance_score": 0.5475880052151239,
+      "header_preservation_score": 1.0,
+      "avg_pairwise_overlap": 0.04531886714119832,
+      "retrieval_score": 0.95,
+      "retrieval_hit_rate": 1.0,
+      "retrieval_mrr": 0.9
+    },
+    "Semantic + Recursive": {
+      "status": "成功",
+      "chunk_count": 58,
+      "avg_length": 270.6034482758621,
+      "median_length": 283.5,
+      "min_length": 3,
+      "max_length": 395,
+      "total_chars": 15695,
+      "coverage_ratio": 1.037960452351035,
+      "length_variance": 8939.446195005945,
+      "length_std": 94.54864459634493,
+      "length_variance_score": 0.7410705115979321,
+      "header_preservation_score": 0.7529755690123199,
+      "avg_pairwise_overlap": 0.7107697079834022,
+      "retrieval_score": 0.75,
+      "retrieval_hit_rate": 0.8,
+      "retrieval_mrr": 0.7
+    },
+    "MarkdownHeaderTextSplitter": {
+      "status": "成功",
+      "chunk_count": 55,
+      "avg_length": 273.1454545454545,
+      "median_length": 255,
+      "min_length": 52,
+      "max_length": 1062,
+      "total_chars": 15023,
+      "coverage_ratio": 0.9935189471595794,
+      "length_variance": 37478.7788429752,
+      "length_std": 193.59436676457094,
+      "length_variance_score": 0.5852199492616711,
+      "header_preservation_score": 1.0,
+      "avg_pairwise_overlap": 0.5945056265421556,
+      "retrieval_score": 0.75,
+      "retrieval_hit_rate": 0.8,
+      "retrieval_mrr": 0.7
+    },
+    "MarkdownHeader + Recursive": {
+      "status": "成功",
+      "chunk_count": 66,
+      "avg_length": 233.62121212121212,
+      "median_length": 253.0,
+      "min_length": 52,
+      "max_length": 399,
+      "total_chars": 15419,
+      "coverage_ratio": 1.0197076912902585,
+      "length_variance": 9743.871671258035,
+      "length_std": 98.71105141400346,
+      "length_variance_score": 0.7029748169378579,
+      "header_preservation_score": 1.0,
+      "avg_pairwise_overlap": 0.6189592874461295,
+      "retrieval_score": 0.75,
+      "retrieval_hit_rate": 0.8,
+      "retrieval_mrr": 0.7
+    },
+    "Parent-Child Chunking": {
+      "status": "成功",
+      "chunk_count": 71,
+      "avg_length": 260.1830985915493,
+      "median_length": 277,
+      "min_length": 3,
+      "max_length": 398,
+      "total_chars": 18473,
+      "coverage_ratio": 1.2216784604192845,
+      "length_variance": 9714.76929180718,
+      "length_std": 98.5635292174909,
+      "length_variance_score": 0.7252558725933,
+      "header_preservation_score": 0.8015384615384615,
+      "avg_pairwise_overlap": 0.7160144878354693,
+      "retrieval_score": 0.7333333333333334,
+      "retrieval_hit_rate": 0.8,
+      "retrieval_mrr": 0.6666666666666667
+    }
+  },
+  "retrieval": {
+    "CharacterTextSplitter": {
+      "score": 0.8,
+      "hit_rate": 0.8,
+      "mrr": 0.8,
+      "qa_count": 5,
+      "top_k": 3,
+      "error": null
+    },
+    "RecursiveCharacterTextSplitter": {
+      "score": 0.8,
+      "hit_rate": 0.8,
+      "mrr": 0.8,
+      "qa_count": 5,
+      "top_k": 3,
+      "error": null
+    },
+    "SemanticChunker": {
+      "score": 0.95,
+      "hit_rate": 1.0,
+      "mrr": 0.9,
+      "qa_count": 5,
+      "top_k": 2,
+      "error": null
+    },
+    "Semantic + Recursive": {
+      "score": 0.75,
+      "hit_rate": 0.8,
+      "mrr": 0.7,
+      "qa_count": 5,
+      "top_k": 3,
+      "error": null
+    },
+    "MarkdownHeaderTextSplitter": {
+      "score": 0.75,
+      "hit_rate": 0.8,
+      "mrr": 0.7,
+      "qa_count": 5,
+      "top_k": 3,
+      "error": null
+    },
+    "MarkdownHeader + Recursive": {
+      "score": 0.75,
+      "hit_rate": 0.8,
+      "mrr": 0.7,
+      "qa_count": 5,
+      "top_k": 3,
+      "error": null
+    },
+    "Parent-Child Chunking": {
+      "score": 0.7333333333333334,
+      "hit_rate": 0.8,
+      "mrr": 0.6666666666666667,
+      "qa_count": 5,
+      "top_k": 3,
+      "error": null
+    }
+  },
+  "pairwise_overlap_matrix": {
+    "CharacterTextSplitter": {
+      "CharacterTextSplitter": 1.0,
+      "RecursiveCharacterTextSplitter": 0.8641332251317331,
+      "SemanticChunker": 0.07790915115460023,
+      "Semantic + Recursive": 0.8565321780192279,
+      "MarkdownHeaderTextSplitter": 0.6971293243163638,
+      "MarkdownHeader + Recursive": 0.6307911103252218,
+      "Parent-Child Chunking": 0.8586273945494719
+    },
+    "RecursiveCharacterTextSplitter": {
+      "RecursiveCharacterTextSplitter": 1.0,
+      "CharacterTextSplitter": 0.8641332251317331,
+      "SemanticChunker": 0.0467743249246977,
+      "Semantic + Recursive": 0.9924965637329067,
+      "MarkdownHeaderTextSplitter": 0.6543059693249538,
+      "MarkdownHeader + Recursive": 0.7321513511147943,
+      "Parent-Child Chunking": 0.9832574796697777
+    },
+    "SemanticChunker": {
+      "SemanticChunker": 1.0,
+      "CharacterTextSplitter": 0.07790915115460023,
+      "RecursiveCharacterTextSplitter": 0.0467743249246977,
+      "Semantic + Recursive": 0.046495066019008616,
+      "MarkdownHeaderTextSplitter": 0.0297451585930735,
+      "MarkdownHeader + Recursive": 0.022864492066428363,
+      "Parent-Child Chunking": 0.04812501008938153
+    },
+    "Semantic + Recursive": {
+      "Semantic + Recursive": 1.0,
+      "CharacterTextSplitter": 0.8565321780192279,
+      "RecursiveCharacterTextSplitter": 0.9924965637329067,
+      "SemanticChunker": 0.046495066019008616,
+      "MarkdownHeaderTextSplitter": 0.6552805052830631,
+      "MarkdownHeader + Recursive": 0.7328879634184473,
+      "Parent-Child Chunking": 0.98092597142776
+    },
+    "MarkdownHeaderTextSplitter": {
+      "MarkdownHeaderTextSplitter": 1.0,
+      "CharacterTextSplitter": 0.6971293243163638,
+      "RecursiveCharacterTextSplitter": 0.6543059693249538,
+      "SemanticChunker": 0.0297451585930735,
+      "Semantic + Recursive": 0.6552805052830631,
+      "MarkdownHeader + Recursive": 0.8502412691054696,
+      "Parent-Child Chunking": 0.6803315326300095
+    },
+    "MarkdownHeader + Recursive": {
+      "MarkdownHeader + Recursive": 1.0,
+      "CharacterTextSplitter": 0.6307911103252218,
+      "RecursiveCharacterTextSplitter": 0.7321513511147943,
+      "SemanticChunker": 0.022864492066428363,
+      "Semantic + Recursive": 0.7328879634184473,
+      "MarkdownHeaderTextSplitter": 0.8502412691054696,
+      "Parent-Child Chunking": 0.7448195386464151
+    },
+    "Parent-Child Chunking": {
+      "Parent-Child Chunking": 1.0,
+      "CharacterTextSplitter": 0.8586273945494719,
+      "RecursiveCharacterTextSplitter": 0.9832574796697777,
+      "SemanticChunker": 0.04812501008938153,
+      "Semantic + Recursive": 0.98092597142776,
+      "MarkdownHeaderTextSplitter": 0.6803315326300095,
+      "MarkdownHeader + Recursive": 0.7448195386464151
+    }
+  },
+  "result_notes": {
+    "CharacterTextSplitter": "",
+    "RecursiveCharacterTextSplitter": "",
+    "SemanticChunker": "",
+    "Semantic + Recursive": "",
+    "MarkdownHeaderTextSplitter": "",
+    "MarkdownHeader + Recursive": "",
+    "Parent-Child Chunking": "parent_chunks=18"
+  },
+  "result_errors": {
+    "CharacterTextSplitter": null,
+    "RecursiveCharacterTextSplitter": null,
+    "SemanticChunker": null,
+    "Semantic + Recursive": null,
+    "MarkdownHeaderTextSplitter": null,
+    "MarkdownHeader + Recursive": null,
+    "Parent-Child Chunking": null
+  }
+}

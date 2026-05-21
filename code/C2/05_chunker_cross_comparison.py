@@ -98,7 +98,7 @@ MARKDOWN_RECURSIVE_CONFIG = {
 }
 
 PARENT_CHILD_CONFIG = {
-    "parent_chunk_size": 1500,
+    "parent_chunk_size": 1200,
     "parent_chunk_overlap": 300,
     "child_chunk_size": 400,
     "child_chunk_overlap": 100,

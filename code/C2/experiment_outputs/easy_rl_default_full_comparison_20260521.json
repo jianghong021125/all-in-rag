@@ -1,0 +1,318 @@
+{
+  "run_at": "2026-05-21T10:16:31",
+  "interpreter": "/Users/jianghong/anaconda3/envs/all-in-rag/bin/python",
+  "doc_path": "/Users/jianghong/Desktop/Summer-SupplyChainData/all-in-rag/data/C2/md/easy-rl-chapter1.md",
+  "source_length": 23172,
+  "qa_source": "curated",
+  "qa_count": 5,
+  "default_configs": {
+    "CharacterTextSplitter": {
+      "chunk_size": 400,
+      "chunk_overlap": 100
+    },
+    "RecursiveCharacterTextSplitter": {
+      "chunk_size": 400,
+      "chunk_overlap": 100
+    },
+    "SemanticChunker": {
+      "model_name": "BAAI/bge-small-zh-v1.5",
+      "device": "cpu",
+      "normalize_embeddings": true,
+      "breakpoint_threshold_type": "gradient",
+      "breakpoint_threshold_amount": null
+    },
+    "Semantic + Recursive": {
+      "model_name": "BAAI/bge-small-zh-v1.5",
+      "device": "cpu",
+      "normalize_embeddings": true,
+      "breakpoint_threshold_type": "gradient",
+      "breakpoint_threshold_amount": null,
+      "max_semantic_chunk_size": 1000,
+      "recursive_chunk_size": 400,
+      "recursive_chunk_overlap": 100
+    },
+    "MarkdownHeaderTextSplitter": {
+      "strip_headers": false
+    },
+    "MarkdownHeader + Recursive": {
+      "strip_headers": false,
+      "chunk_size": 400,
+      "chunk_overlap": 100
+    },
+    "Parent-Child Chunking": {
+      "parent_chunk_size": 1200,
+      "parent_chunk_overlap": 300,
+      "child_chunk_size": 400,
+      "child_chunk_overlap": 100
+    }
+  },
+  "metrics": {
+    "CharacterTextSplitter": {
+      "status": "成功",
+      "chunk_count": 76,
+      "avg_length": 323.2894736842105,
+      "median_length": 341.0,
+      "min_length": 93,
+      "max_length": 608,
+      "total_chars": 24570,
+      "coverage_ratio": 1.0603314344899015,
+      "length_variance": 7668.442520775623,
+      "length_std": 87.56964383149918,
+      "length_variance_score": 0.7868621138043728,
+      "header_preservation_score": 0.23371970495258165,
+      "avg_pairwise_overlap": 0.6609643732731134,
+      "retrieval_score": 1.0,
+      "retrieval_hit_rate": 1.0,
+      "retrieval_mrr": 1.0
+    },
+    "RecursiveCharacterTextSplitter": {
+      "status": "成功",
+      "chunk_count": 83,
+      "avg_length": 299.7831325301205,
+      "median_length": 318,
+      "min_length": 93,
+      "max_length": 391,
+      "total_chars": 24882,
+      "coverage_ratio": 1.0737959606421543,
+      "length_variance": 5638.242125127014,
+      "length_std": 75.08822893854278,
+      "length_variance_score": 0.7996960113347585,
+      "header_preservation_score": 0.2300638951124388,
+      "avg_pairwise_overlap": 0.6940121737983406,
+      "retrieval_score": 1.0,
+      "retrieval_hit_rate": 1.0,
+      "retrieval_mrr": 1.0
+    },
+    "SemanticChunker": {
+      "status": "成功",
+      "chunk_count": 2,
+      "avg_length": 11584.5,
+      "median_length": 11584.5,
+      "min_length": 7134,
+      "max_length": 16035,
+      "total_chars": 23169,
+      "coverage_ratio": 0.9998705334023822,
+      "length_variance": 19806950.25,
+      "length_std": 4450.5,
+      "length_variance_score": 0.7224508886810104,
+      "header_preservation_score": 1.0,
+      "avg_pairwise_overlap": 0.0333158337641732,
+      "retrieval_score": 1.0,
+      "retrieval_hit_rate": 1.0,
+      "retrieval_mrr": 1.0
+    },
+    "Semantic + Recursive": {
+      "status": "成功",
+      "chunk_count": 85,
+      "avg_length": 293.74117647058824,
+      "median_length": 315,
+      "min_length": 93,
+      "max_length": 391,
+      "total_chars": 24968,
+      "coverage_ratio": 1.0775073364405316,
+      "length_variance": 5628.191833910035,
+      "length_std": 75.02127587498119,
+      "length_variance_score": 0.7965593422058104,
+      "header_preservation_score": 0.2332699217924329,
+      "avg_pairwise_overlap": 0.6896660531380101,
+      "retrieval_score": 1.0,
+      "retrieval_hit_rate": 1.0,
+      "retrieval_mrr": 1.0
+    },
+    "MarkdownHeaderTextSplitter": {
+      "status": "成功",
+      "chunk_count": 21,
+      "avg_length": 1092.1904761904761,
+      "median_length": 917,
+      "min_length": 225,
+      "max_length": 3300,
+      "total_chars": 22936,
+      "coverage_ratio": 0.9898152943207319,
+      "length_variance": 781752.2494331066,
+      "length_std": 884.167546018913,
+      "length_variance_score": 0.5526278457227635,
+      "header_preservation_score": 0.0,
+      "avg_pairwise_overlap": null,
+      "retrieval_score": 0.95,
+      "retrieval_hit_rate": 1.0,
+      "retrieval_mrr": 0.9
+    },
+    "MarkdownHeader + Recursive": {
+      "status": "成功",
+      "chunk_count": 80,
+      "avg_length": 310.7125,
+      "median_length": 319.0,
+      "min_length": 84,
+      "max_length": 399,
+      "total_chars": 24857,
+      "coverage_ratio": 1.0727170723286725,
+      "length_variance": 4497.97984375,
+      "length_std": 67.06698027904642,
+      "length_variance_score": 0.8224705581427889,
+      "header_preservation_score": 1.0,
+      "avg_pairwise_overlap": 0.42998995267575085,
+      "retrieval_score": 1.0,
+      "retrieval_hit_rate": 1.0,
+      "retrieval_mrr": 1.0
+    },
+    "Parent-Child Chunking": {
+      "status": "成功",
+      "chunk_count": 102,
+      "avg_length": 283.7156862745098,
+      "median_length": 297.0,
+      "min_length": 23,
+      "max_length": 391,
+      "total_chars": 28939,
+      "coverage_ratio": 1.248877956153979,
+      "length_variance": 6639.968185313341,
+      "length_std": 81.4859999344264,
+      "length_variance_score": 0.7768739767323876,
+      "header_preservation_score": 0.24357142857142858,
+      "avg_pairwise_overlap": 0.6761278206696006,
+      "retrieval_score": 0.95,
+      "retrieval_hit_rate": 1.0,
+      "retrieval_mrr": 0.9
+    }
+  },
+  "retrieval": {
+    "CharacterTextSplitter": {
+      "score": 1.0,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "qa_count": 5,
+      "top_k": 3,
+      "error": null
+    },
+    "RecursiveCharacterTextSplitter": {
+      "score": 1.0,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "qa_count": 5,
+      "top_k": 3,
+      "error": null
+    },
+    "SemanticChunker": {
+      "score": 1.0,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "qa_count": 5,
+      "top_k": 2,
+      "error": null
+    },
+    "Semantic + Recursive": {
+      "score": 1.0,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "qa_count": 5,
+      "top_k": 3,
+      "error": null
+    },
+    "MarkdownHeaderTextSplitter": {
+      "score": 0.95,
+      "hit_rate": 1.0,
+      "mrr": 0.9,
+      "qa_count": 5,
+      "top_k": 3,
+      "error": null
+    },
+    "MarkdownHeader + Recursive": {
+      "score": 1.0,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "qa_count": 5,
+      "top_k": 3,
+      "error": null
+    },
+    "Parent-Child Chunking": {
+      "score": 0.95,
+      "hit_rate": 1.0,
+      "mrr": 0.9,
+      "qa_count": 5,
+      "top_k": 3,
+      "error": null
+    }
+  },
+  "pairwise_overlap_matrix": {
+    "CharacterTextSplitter": {
+      "CharacterTextSplitter": 1.0,
+      "RecursiveCharacterTextSplitter": 0.9493002594352,
+      "SemanticChunker": 0.034044487958361465,
+      "Semantic + Recursive": 0.932849559649638,
+      "MarkdownHeaderTextSplitter": null,
+      "MarkdownHeader + Recursive": 0.47794736442562635,
+      "Parent-Child Chunking": 0.9106801948967415
+    },
+    "RecursiveCharacterTextSplitter": {
+      "RecursiveCharacterTextSplitter": 1.0,
+      "CharacterTextSplitter": 0.9493002594352,
+      "SemanticChunker": 0.03395770608183403,
+      "Semantic + Recursive": 0.9829400302699621,
+      "MarkdownHeaderTextSplitter": null,
+      "MarkdownHeader + Recursive": 0.5465746180617069,
+      "Parent-Child Chunking": 0.9572882551429996
+    },
+    "SemanticChunker": {
+      "SemanticChunker": 1.0,
+      "CharacterTextSplitter": 0.034044487958361465,
+      "RecursiveCharacterTextSplitter": 0.03395770608183403,
+      "Semantic + Recursive": 0.033985056960706986,
+      "MarkdownHeaderTextSplitter": null,
+      "MarkdownHeader + Recursive": 0.031015688024579047,
+      "Parent-Child Chunking": 0.03357622979538449
+    },
+    "Semantic + Recursive": {
+      "Semantic + Recursive": 1.0,
+      "CharacterTextSplitter": 0.932849559649638,
+      "RecursiveCharacterTextSplitter": 0.9829400302699621,
+      "SemanticChunker": 0.033985056960706986,
+      "MarkdownHeaderTextSplitter": null,
+      "MarkdownHeader + Recursive": 0.5569366440818541,
+      "Parent-Child Chunking": 0.9416189747278896
+    },
+    "MarkdownHeaderTextSplitter": {
+      "MarkdownHeaderTextSplitter": 1.0,
+      "CharacterTextSplitter": null,
+      "RecursiveCharacterTextSplitter": null,
+      "SemanticChunker": null,
+      "Semantic + Recursive": null,
+      "MarkdownHeader + Recursive": null,
+      "Parent-Child Chunking": null
+    },
+    "MarkdownHeader + Recursive": {
+      "MarkdownHeader + Recursive": 1.0,
+      "CharacterTextSplitter": 0.47794736442562635,
+      "RecursiveCharacterTextSplitter": 0.5465746180617069,
+      "SemanticChunker": 0.031015688024579047,
+      "Semantic + Recursive": 0.5569366440818541,
+      "MarkdownHeaderTextSplitter": null,
+      "Parent-Child Chunking": 0.537475448784988
+    },
+    "Parent-Child Chunking": {
+      "Parent-Child Chunking": 1.0,
+      "CharacterTextSplitter": 0.9106801948967415,
+      "RecursiveCharacterTextSplitter": 0.9572882551429996,
+      "SemanticChunker": 0.03357622979538449,
+      "Semantic + Recursive": 0.9416189747278896,
+      "MarkdownHeaderTextSplitter": null,
+      "MarkdownHeader + Recursive": 0.537475448784988
+    }
+  },
+  "result_notes": {
+    "CharacterTextSplitter": "",
+    "RecursiveCharacterTextSplitter": "",
+    "SemanticChunker": "",
+    "Semantic + Recursive": "",
+    "MarkdownHeaderTextSplitter": "",
+    "MarkdownHeader + Recursive": "",
+    "Parent-Child Chunking": "parent_chunks=26"
+  },
+  "result_errors": {
+    "CharacterTextSplitter": null,
+    "RecursiveCharacterTextSplitter": null,
+    "SemanticChunker": null,
+    "Semantic + Recursive": null,
+    "MarkdownHeaderTextSplitter": null,
+    "MarkdownHeader + Recursive": null,
+    "Parent-Child Chunking": null
+  }
+}
