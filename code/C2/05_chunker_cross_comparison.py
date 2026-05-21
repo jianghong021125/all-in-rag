@@ -59,20 +59,20 @@ DATA_MD_DIR = Path(__file__).resolve().parents[2] / "data" / "C2" / "md"
 DOC_PATH = DATA_MD_DIR / "early-rl-chapter1.md"
 
 CHARACTER_CONFIG = {
-    "chunk_size": 260,
-    "chunk_overlap": 40,
+    "chunk_size": 400,
+    "chunk_overlap": 100,
 }
 
 RECURSIVE_CONFIG = {
-    "chunk_size": 260,
-    "chunk_overlap": 40,
+    "chunk_size": 400,
+    "chunk_overlap": 100,
 }
 
 SEMANTIC_CONFIG = {
     "model_name": "BAAI/bge-small-zh-v1.5",
     "device": "cpu",
     "normalize_embeddings": True,
-    "breakpoint_threshold_type": "gradient",
+    "breakpoint_threshold_type": "gradient", # 也可以是 "percentile", "standard_deviation", "interquartile" 等
     "breakpoint_threshold_amount": None,
 }
 
@@ -82,9 +82,9 @@ SEMANTIC_RECURSIVE_CONFIG = {
     "normalize_embeddings": True,
     "breakpoint_threshold_type": "gradient",
     "breakpoint_threshold_amount": None,
-    "max_semantic_chunk_size": 420,
-    "recursive_chunk_size": 240,
-    "recursive_chunk_overlap": 40,
+    "max_semantic_chunk_size": 1000,
+    "recursive_chunk_size": 400,
+    "recursive_chunk_overlap": 100,
 }
 
 MARKDOWN_HEADER_CONFIG = {
@@ -93,15 +93,15 @@ MARKDOWN_HEADER_CONFIG = {
 
 MARKDOWN_RECURSIVE_CONFIG = {
     "strip_headers": False,
-    "chunk_size": 300,
-    "chunk_overlap": 50,
+    "chunk_size": 400,
+    "chunk_overlap": 100,
 }
 
 PARENT_CHILD_CONFIG = {
-    "parent_chunk_size": 1200,
-    "parent_chunk_overlap": 120,
-    "child_chunk_size": 260,
-    "child_chunk_overlap": 40,
+    "parent_chunk_size": 1500,
+    "parent_chunk_overlap": 300,
+    "child_chunk_size": 400,
+    "child_chunk_overlap": 100,
 }
 
 RETRIEVAL_CONFIG = {
