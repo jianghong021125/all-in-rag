@@ -1,0 +1,79 @@
+[
+  {
+    "doc_id": "chapter1/01_RAG_intro",
+    "source_path": "data/docs/chapter1/01_RAG_intro.md",
+    "char_length": 9382,
+    "chunk_count": 42,
+    "parent_chunk_count": 11
+  },
+  {
+    "doc_id": "chapter1/02_preparation",
+    "source_path": "data/docs/chapter1/02_preparation.md",
+    "char_length": 9305,
+    "chunk_count": 41,
+    "parent_chunk_count": 10
+  },
+  {
+    "doc_id": "chapter1/03_get_start_rag",
+    "source_path": "data/docs/chapter1/03_get_start_rag.md",
+    "char_length": 8039,
+    "chunk_count": 43,
+    "parent_chunk_count": 11
+  },
+  {
+    "doc_id": "chapter1/virtualenv",
+    "source_path": "data/docs/chapter1/virtualenv.md",
+    "char_length": 1482,
+    "chunk_count": 6,
+    "parent_chunk_count": 2
+  },
+  {
+    "doc_id": "chapter2/04_data_load",
+    "source_path": "data/docs/chapter2/04_data_load.md",
+    "char_length": 7787,
+    "chunk_count": 32,
+    "parent_chunk_count": 10
+  },
+  {
+    "doc_id": "chapter2/05_text_chunking",
+    "source_path": "data/docs/chapter2/05_text_chunking.md",
+    "char_length": 11303,
+    "chunk_count": 51,
+    "parent_chunk_count": 13
+  },
+  {
+    "doc_id": "chapter3/06_vector_embedding",
+    "source_path": "data/docs/chapter3/06_vector_embedding.md",
+    "char_length": 6010,
+    "chunk_count": 29,
+    "parent_chunk_count": 8
+  },
+  {
+    "doc_id": "chapter3/07_multimodal_embedding",
+    "source_path": "data/docs/chapter3/07_multimodal_embedding.md",
+    "char_length": 4212,
+    "chunk_count": 16,
+    "parent_chunk_count": 4
+  },
+  {
+    "doc_id": "chapter3/08_vector_db",
+    "source_path": "data/docs/chapter3/08_vector_db.md",
+    "char_length": 5931,
+    "chunk_count": 27,
+    "parent_chunk_count": 7
+  },
+  {
+    "doc_id": "chapter3/09_milvus",
+    "source_path": "data/docs/chapter3/09_milvus.md",
+    "char_length": 17922,
+    "chunk_count": 81,
+    "parent_chunk_count": 20
+  },
+  {
+    "doc_id": "chapter3/10_index_optimization",
+    "source_path": "data/docs/chapter3/10_index_optimization.md",
+    "char_length": 12286,
+    "chunk_count": 56,
+    "parent_chunk_count": 14
+  }
+]

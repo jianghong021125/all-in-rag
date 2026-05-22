@@ -72,5 +72,6 @@ rag/
 *.key
 *.secret
 
-# Volumes (docker, etc.)
+# 大型文件和镜像
 volumes/
+outputs/

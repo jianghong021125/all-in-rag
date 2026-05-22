@@ -1,0 +1,208 @@
+[
+  {
+    "question_id": "q01",
+    "question_type": "definition_fact",
+    "question": "RAG 是什么，它结合了哪两类知识？",
+    "gold_doc_ids": ["chapter1/01_RAG_intro"],
+    "gold_chunk_ids": ["chapter1/01_RAG_intro::chunk_000"],
+    "gold_chunk_ids_parent_child": ["chapter1/01_RAG_intro::chunk_000"],
+    "gold_section_hints": ["一、什么是 RAG？", "1.1 核心定义"],
+    "notes": "定义型问题，答案集中在 RAG 简介开头。"
+  },
+  {
+    "question_id": "q02",
+    "question_type": "definition_fact",
+    "question": "文本分块的首要原因是什么？它主要受哪两个模型组件的上下文限制？",
+    "gold_doc_ids": ["chapter2/05_text_chunking"],
+    "gold_chunk_ids": ["chapter2/05_text_chunking::chunk_001", "chapter2/05_text_chunking::chunk_002"],
+    "gold_chunk_ids_parent_child": ["chapter2/05_text_chunking::chunk_001", "chapter2/05_text_chunking::chunk_002"],
+    "gold_section_hints": ["二、文本分块重要性", "2.1 满足模型上下文限制"],
+    "notes": "同时考查 chunking 的原因和两个受限组件。"
+  },
+  {
+    "question_id": "q03",
+    "question_type": "definition_fact",
+    "question": "向量数据库最重要的核心功能是什么？",
+    "gold_doc_ids": ["chapter3/08_vector_db"],
+    "gold_chunk_ids": ["chapter3/08_vector_db::chunk_001"],
+    "gold_chunk_ids_parent_child": ["chapter3/08_vector_db::chunk_000"],
+    "gold_section_hints": ["一、向量数据库的作用", "1.1 向量数据库主要功能"],
+    "notes": "定义型问题。"
+  },
+  {
+    "question_id": "q04",
+    "question_type": "keyword_exact",
+    "question": "在文本分块章节中，'Lost in the Middle' 指的是什么现象？",
+    "gold_doc_ids": ["chapter2/05_text_chunking"],
+    "gold_chunk_ids": ["chapter2/05_text_chunking::chunk_006"],
+    "gold_chunk_ids_parent_child": ["chapter2/05_text_chunking::chunk_004"],
+    "gold_section_hints": ["2.2.2 生成过程的“大海捞针” (Lost in the Middle)"],
+    "notes": "关键词精确匹配型。"
+  },
+  {
+    "question_id": "q05",
+    "question_type": "keyword_exact",
+    "question": "哪一节讨论了 HNSW、IVF、LSH 和 PQ 这些索引或搜索方法？",
+    "gold_doc_ids": ["chapter3/08_vector_db"],
+    "gold_chunk_ids": ["chapter3/08_vector_db::chunk_007"],
+    "gold_chunk_ids_parent_child": ["chapter3/08_vector_db::chunk_007", "chapter3/08_vector_db::chunk_009"],
+    "gold_section_hints": ["二、工作原理"],
+    "notes": "依赖术语命中。"
+  },
+  {
+    "question_id": "q06",
+    "question_type": "keyword_exact",
+    "question": "哪份文档提到了 'RAG vs. 微调' 的技术选型？",
+    "gold_doc_ids": ["chapter1/01_RAG_intro"],
+    "gold_chunk_ids": ["chapter1/01_RAG_intro::chunk_009"],
+    "gold_chunk_ids_parent_child": ["chapter1/01_RAG_intro::chunk_011"],
+    "gold_section_hints": ["二、为什么要使用 RAG？", "2.1 技术选型：RAG vs. 微调"],
+    "notes": "依赖标题级关键词。"
+  },
+  {
+    "question_id": "q07",
+    "question_type": "chapter_localization",
+    "question": "如果我想看‘基于文档结构的分块’，应该定位到哪份文档？",
+    "gold_doc_ids": ["chapter2/05_text_chunking"],
+    "gold_chunk_ids": ["chapter2/05_text_chunking::chunk_032"],
+    "gold_chunk_ids_parent_child": ["chapter2/05_text_chunking::chunk_035"],
+    "gold_section_hints": ["3.4 基于文档结构的分块"],
+    "notes": "章节定位型问题。"
+  },
+  {
+    "question_id": "q08",
+    "question_type": "chapter_localization",
+    "question": "如果我想看‘本地向量存储：以 FAISS 为例’，应该定位到哪份文档？",
+    "gold_doc_ids": ["chapter3/08_vector_db"],
+    "gold_chunk_ids": ["chapter3/08_vector_db::chunk_012"],
+    "gold_chunk_ids_parent_child": ["chapter3/08_vector_db::chunk_014"],
+    "gold_section_hints": ["四、本地向量存储：以 FAISS 为例"],
+    "notes": "章节定位型问题。"
+  },
+  {
+    "question_id": "q09",
+    "question_type": "chapter_localization",
+    "question": "如果我想找四步构建最小可行系统（MVP），应该看哪份文档？",
+    "gold_doc_ids": ["chapter1/01_RAG_intro"],
+    "gold_chunk_ids": ["chapter1/01_RAG_intro::chunk_021"],
+    "gold_chunk_ids_parent_child": ["chapter1/01_RAG_intro::chunk_028"],
+    "gold_section_hints": ["三、如何上手 RAG？", "3.2 四步构建最小可行系统（MVP）"],
+    "notes": "定位到 RAG 简介中的方法论部分。"
+  },
+  {
+    "question_id": "q10",
+    "question_type": "multi_hop",
+    "question": "如果我想先搭一个最小可行的 RAG 原型，同时又不想一开始就部署复杂的向量数据库，应该优先看哪几份材料？",
+    "gold_doc_ids": ["chapter1/03_get_start_rag", "chapter3/08_vector_db"],
+    "gold_chunk_ids": ["chapter1/03_get_start_rag::chunk_000", "chapter3/08_vector_db::chunk_011"],
+    "gold_chunk_ids_parent_child": ["chapter1/03_get_start_rag::chunk_000", "chapter3/08_vector_db::chunk_013"],
+    "gold_section_hints": ["四步构建RAG", "本地向量存储：以 FAISS 为例"],
+    "notes": "多跳问题，需要同时联动上手实现与轻量向量存储。"
+  },
+  {
+    "question_id": "q11",
+    "question_type": "multi_hop",
+    "question": "如果长文档让检索和生成都变差，应该结合哪些分块原则来缓解？",
+    "gold_doc_ids": ["chapter2/05_text_chunking"],
+    "gold_chunk_ids": [
+      "chapter2/05_text_chunking::chunk_003",
+      "chapter2/05_text_chunking::chunk_006",
+      "chapter2/05_text_chunking::chunk_023",
+      "chapter2/05_text_chunking::chunk_036"
+    ],
+    "gold_chunk_ids_parent_child": [
+      "chapter2/05_text_chunking::chunk_004",
+      "chapter2/05_text_chunking::chunk_005",
+      "chapter2/05_text_chunking::chunk_023",
+      "chapter2/05_text_chunking::chunk_038"
+    ],
+    "gold_section_hints": ["2.2 为何“块”不是越大越好", "3.2 递归字符分块", "3.4 基于文档结构的分块"],
+    "notes": "虽然答案主要在同一文档，但通常需要跨多个段落综合。"
+  },
+  {
+    "question_id": "q12",
+    "question_type": "multi_hop",
+    "question": "如果我要做生产级 RAG，除了相似性搜索之外，还应该关注向量数据库的哪些能力？",
+    "gold_doc_ids": ["chapter3/08_vector_db"],
+    "gold_chunk_ids": [
+      "chapter3/08_vector_db::chunk_001",
+      "chapter3/08_vector_db::chunk_002",
+      "chapter3/08_vector_db::chunk_011"
+    ],
+    "gold_chunk_ids_parent_child": ["chapter3/08_vector_db::chunk_001"],
+    "gold_section_hints": ["1.1 向量数据库主要功能", "三、主流向量数据库介绍"],
+    "notes": "要求综合查询能力、可扩展性、高可用和生态集成。"
+  },
+  {
+    "question_id": "q13",
+    "question_type": "fuzzy_intent",
+    "question": "我想先搭个能跑起来的 RAG 原型，别太复杂。",
+    "gold_doc_ids": ["chapter1/03_get_start_rag", "chapter3/08_vector_db"],
+    "gold_chunk_ids": [
+      "chapter1/03_get_start_rag::chunk_000",
+      "chapter3/08_vector_db::chunk_011",
+      "chapter3/08_vector_db::chunk_012"
+    ],
+    "gold_chunk_ids_parent_child": [
+      "chapter1/03_get_start_rag::chunk_000",
+      "chapter3/08_vector_db::chunk_013"
+    ],
+    "gold_section_hints": ["四步构建RAG", "新手入门/小型项目"],
+    "notes": "模糊意图型，允许多文档联合回答。"
+  },
+  {
+    "question_id": "q14",
+    "question_type": "fuzzy_intent",
+    "question": "文档老是太长不好检索，怎么切比较合适？",
+    "gold_doc_ids": ["chapter2/05_text_chunking"],
+    "gold_chunk_ids": [
+      "chapter2/05_text_chunking::chunk_003",
+      "chapter2/05_text_chunking::chunk_023",
+      "chapter2/05_text_chunking::chunk_036"
+    ],
+    "gold_chunk_ids_parent_child": [
+      "chapter2/05_text_chunking::chunk_006",
+      "chapter2/05_text_chunking::chunk_023",
+      "chapter2/05_text_chunking::chunk_038"
+    ],
+    "gold_section_hints": ["二、文本分块重要性", "三、基础分块策略"],
+    "notes": "模糊意图型，偏实践建议。"
+  },
+  {
+    "question_id": "q15",
+    "question_type": "fuzzy_intent",
+    "question": "我需要快速理解向量库到底是干嘛的。",
+    "gold_doc_ids": ["chapter3/08_vector_db"],
+    "gold_chunk_ids": [
+      "chapter3/08_vector_db::chunk_000",
+      "chapter3/08_vector_db::chunk_001",
+      "chapter3/08_vector_db::chunk_003"
+    ],
+    "gold_chunk_ids_parent_child": [
+      "chapter3/08_vector_db::chunk_000",
+      "chapter3/08_vector_db::chunk_001"
+    ],
+    "gold_section_hints": ["一、向量数据库的作用"],
+    "notes": "模糊意图型。"
+  },
+  {
+    "question_id": "q16",
+    "question_type": "fuzzy_intent",
+    "question": "我在 Mac 上想先把这个项目环境配起来，应该先看什么？",
+    "gold_doc_ids": ["chapter1/02_preparation", "chapter1/virtualenv"],
+    "gold_chunk_ids": [
+      "chapter1/virtualenv::chunk_002",
+      "chapter1/virtualenv::chunk_003",
+      "chapter1/virtualenv::chunk_005",
+      "chapter1/02_preparation::chunk_032"
+    ],
+    "gold_chunk_ids_parent_child": [
+      "chapter1/virtualenv::chunk_002",
+      "chapter1/virtualenv::chunk_003",
+      "chapter1/virtualenv::chunk_005",
+      "chapter1/02_preparation::chunk_036"
+    ],
+    "gold_section_hints": ["环境配置相关章节"],
+    "notes": "模糊意图型，面向环境准备。"
+  }
+]
